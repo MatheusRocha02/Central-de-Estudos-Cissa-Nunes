@@ -1,0 +1,633 @@
+/*General, imports and variables*/
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: "DM Sans", sans-serif;
+    background: var(--gradient);
+    background: var(--gradient);
+}
+
+section {
+    height: 100vh;
+    padding: 4rem 8rem;
+}
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+/*Variables*/
+:root {
+    --pink: rgba(236, 93, 177, 0.877);
+    --black: rgba(0, 0, 0, 0.705);
+    --white: rgba(255, 255, 255, 0.849);
+
+    --shadow: 0.2rem 0.2rem 0.5rem rgba(58, 56, 56, 0.671);
+    --gradient: linear-gradient(var(--black), var(--pink));
+}
+
+/*Images e Video*/
+.logo {
+    width: 6rem;
+}
+
+.imagem-cissa-nunes {
+    width: 35rem;
+    border: 3px solid var(--pink);
+    border-radius: 100rem;
+    position: relative;
+    right: 15rem;
+    animation: slide 1.5s ease-in-out;
+}
+.card img{
+    width: 30rem;
+}
+video{
+    width: 30rem;
+    border-radius: 2rem;
+    box-shadow: var(--shadow);
+}
+.pin{
+    width: 3rem;
+}
+.contact-icon{
+    width: 6rem;
+}
+.cellphone-icon{
+    width: 2rem;
+    margin-right: 1rem;
+}
+
+/*States*/
+nav ul li a:hover {
+    border-bottom: 3px solid var(--pink);
+}
+
+.subscribe-link:hover, .contact-link:hover, .formulario-de-inscricao button:hover  {
+    transform: scale(1.1);
+}
+ 
+.formulario-de-inscricao div input:focus-visible, select:focus{
+    border: none;
+    background: rgba(223, 218, 218, 0.815);
+    border-radius: 1rem;
+}
+
+
+
+/*Animations and transitions*/
+@keyframes slide {
+    0% {
+        transform: translateX(300%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes UpScale {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.3);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+
+/*Header styles*/
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 4rem;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+header nav ul {
+    display: flex;
+    gap: 4rem;
+}
+
+header nav ul li a {
+    font-size: 2.5rem;
+    color: var(--black);
+}
+
+/*Home*/
+.bg-div {
+    background: url(/assets/imgs/index-bg.png);
+    background-position: center;
+    background-size: cover;
+    border-bottom-left-radius: 10rem;
+    border-bottom-right-radius: 10rem;
+}
+
+.home {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-position: center;
+    background-size: cover;
+}
+
+h1 {
+    font-size: 7rem;
+    font-weight: 500;
+    color: var(--black);
+}
+
+h2 {
+    font-size: 12rem;
+    font-weight: 600;
+    color: var(--pink);
+    position: relative;
+    bottom: 3.5rem;
+}
+
+h3 {
+    font-size: 2.5rem;
+    width: 60%;
+    font-weight: 300;
+    margin-bottom: 4rem;
+}
+
+.home-links {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    gap: 1rem;
+}
+
+.home-links a {
+    font-size: 3rem;
+    padding: 1rem 3rem;
+    text-align: center;
+    border-radius: 5rem;
+}
+
+.subscribe-link {
+    background: var(--pink);
+    color: white;
+    animation: UpScale 0.8s forwards;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--pink);
+}
+
+.aulas-link {
+    border: 1px solid var(--pink);
+    color: var(--black);
+}
+
+/*Aulas Oferecidas*/
+
+.aulas-oferecidas, .aprovacoes{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.aulas-oferecidas-text, .aprovacoes-text{
+    display: inherit;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--white);
+    position: relative;
+    bottom: 10rem;
+    padding: 5vh 40vh;
+    border-radius: 3rem;
+    width: 100%;
+}
+h4{
+   width: 200%;
+    font-size: 4rem;
+    color: var(--white);
+    text-align: center;
+}
+.aulas-oferecidas-text p, .aprovacoes-text p{
+    width: 200%;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.container-slider{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.container-cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    max-width: 80vw;
+    height: auto;
+    overflow-x: hidden;
+}
+.prev-btn, .next-btn{
+    font-size: 8rem;
+    background: transparent;
+    border: none;
+    color: var(--white);
+}
+
+
+.card{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   width: 30rem;
+   height: 45vh;
+   background: var(--white);
+   border-radius: 2rem;
+   box-shadow: var(--shadow);
+}
+
+.card .legend{
+    padding: 1rem;
+    font-size: 3rem;
+    bottom: 0;
+}
+.card a{
+    font-size: 2rem;
+    padding: 1rem;
+    color: var(--black);
+    text-decoration: underline;
+}
+.ver-todas{
+    font-size: 3rem;
+    position: relative;
+    top: 5rem;
+    color: var(--white);
+    text-decoration: underline;
+}
+
+/*Se increva*/
+.se-inscreva{
+    background: url(/assets/imgs/index-bg.png);
+    background-position: center;
+    background-size: cover;
+    border-top-left-radius: 10rem;
+    border-top-right-radius: 10rem;
+    border-bottom-left-radius: 10rem;
+    border-bottom-right-radius: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.se-inscreva fieldset{
+    padding: 4rem;
+    border: 1px solid var(--pink);
+    border-radius: 1.5rem ;
+}
+.formulario-de-inscricao{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 70vw;
+}
+.formulario-de-inscricao div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+label{
+    font-size: 2rem;
+}
+input{
+  height: 3rem;
+  border: none;
+  border-bottom: 1px solid var(--pink);
+  background: transparent;
+  font-size: 2rem;
+  color: var(--black);
+  outline: none;
+}
+select{
+    border: none;
+    border-bottom: 1px solid var(--pink);
+    height: 3rem;
+    background-color: transparent;
+    font-size: 2rem;
+    margin-top: 1rem;
+}
+
+option{
+    font-size: 2rem;
+}
+.formulario-de-inscricao button{
+    height: 3rem;
+    border-radius: 5rem;
+    font-size: 1.8rem;
+    font-weight: 500;
+    font-family: "DM Sans", sans-serif;
+}
+.send-btn{
+    border: 1px solid var(--pink);
+    background-color: var(--pink);
+    color: var(--white);
+    box-shadow: var(--shadow);
+    margin-bottom: 1rem;
+}
+.reset-btn{
+    border: 1px solid var(--pink);
+    color: var(--black);
+}
+
+
+/*Aprovações*/
+
+
+/*Sobre nós*/
+.sobre-nos{
+    background: url(/assets/imgs/index-bg.png);
+    background-size: cover;
+    background-position: center;
+}
+.sobre-nos-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--pink);
+    border-radius: 2rem;
+    padding: 2rem 0rem;
+}
+.video-e-localizacao{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem 10rem;
+}
+.localizacao{
+    border: 1px solid var(--pink);
+    padding: 2rem;
+    border-radius: 1.5rem;
+}
+.address{
+    display: flex;
+}
+h5{
+    font-size: 5rem;
+}
+.sobre-nos-text p{
+    font-size: 2rem;
+    width: 70%;
+    margin-top: 2rem;
+}
+iframe{
+    width: 40rem;
+    height: 20rem;
+}
+.contatos{
+    border: 1px solid var(--pink);
+    border-radius: 1rem;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0rem;
+    gap: 2rem;
+}
+h6{
+    font-size: 2.5rem;
+}
+.contatos p{
+    font-size: 2rem;
+    display: flex;
+    
+}
+.contatos-icons{
+    display: flex;
+    gap: 2.5rem;
+}
+
+
+
+
+/*footer*/
+footer{
+   text-align: center;
+}
+
+
+/********************Responsive*********************/
+
+@media (width <=999px) {
+
+    /*General*/
+    header {
+        padding: 2rem;
+    }
+
+    section {
+        padding: 3rem;
+    }
+
+    /*Mobile images*/
+    .logo {
+        width: 4rem;
+    }
+
+    .imagem-cissa-nunes {
+        width: 18rem;
+        position: relative;
+        right: 2rem;
+    }
+
+    /*Mobile header*/
+    .desktop-menu {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: flex;
+    }
+
+    .mobile-menu-icon{
+        z-index: 10000;
+        position: fixed;
+        right: 2rem;
+        top: 2rem;
+        cursor: pointer;
+    }
+    .line1-changed{
+        transform: rotate(45deg);
+        position: relative;
+        top: 0.8rem;
+    }
+    .line2-changed{
+        display: none;
+    }
+    .line3-changed{
+        transform: rotate(-45deg);
+    }
+    .mobile-menu-icon div{
+        background: var(--black);
+        width: 4rem;
+        height: 0.3rem;
+        margin: 0.5rem;
+        border-radius: 1rem;
+    }
+    .mobile-menu ul{
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        right: 0rem;
+        top: 0rem;
+        background: rgba(141, 137, 137, 0.089);
+        backdrop-filter: blur(1.5rem);
+        z-index: 1000;
+        height: 200vh;
+        padding: 7rem 3rem;
+        box-shadow: var(--shadow);
+        display: none;
+    }
+    .mobile-menu ul.show{
+        display: block;
+    }
+    .mobile-menu li{
+        position: relative;
+        top: 3rem;
+        margin-top: 2rem;
+        text-align: end;
+    }
+    .mobile-menu li a {
+        font-size: 1.8rem;
+    }
+
+
+    /*Mobile home*/
+    h1 {
+        font-size: 3rem;
+        position: relative;
+        bottom: 7rem;
+        width: 200%;
+    }
+
+    h2 {
+        font-size: 5rem;
+        bottom: 8rem;
+        width: 200%;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+        width: 80%;
+        font-weight: 600;
+        opacity: 0.6;
+    }
+
+    .home {
+        position: relative;
+        top: -5rem;
+    }
+
+    .home-links {
+        width: 200%;
+        position: relative;
+        top: 5rem;
+    }
+
+    .home-links a {
+        font-size: 2rem;
+        padding: 0.5rem 4rem;
+        text-align: center;
+        border-radius: 5rem;
+    }
+    .bg-div{
+        border-bottom-left-radius: 4rem;
+        border-bottom-right-radius: 4rem;
+    }
+
+    /*Mobile Aulas Oferecidas*/
+    .aulas-oferecidas-text, .aprovacoes-text{
+        padding: 1.5rem 7rem;
+        bottom: 6rem;
+        border-radius: 1.3rem;
+    }
+    .aulas-oferecidas-text h4, .aprovacoes-text h4{
+        font-size: 3rem;
+    }
+    .aulas-oferecidas-text p, .aprovacoes-text p{
+        font-size: 1.5rem;
+    }
+    .container-slider button{
+        font-size: 4rem;
+    }
+
+    .card{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 30rem;
+        height: 45vh;
+        background: var(--white);
+        border-radius: 2rem;
+        box-shadow: var(--shadow);
+     }
+     .card img{
+        width: 25rem;
+     }
+     .ver-todas{
+        font-size: 2rem;
+     }
+
+     /*Mobile Se Inscreva*/
+     .se-inscreva{
+        border-top-left-radius: 4rem;
+        border-top-right-radius: 4rem;
+        border-bottom-left-radius: 4rem;
+        border-bottom-right-radius: 4rem;
+     }
+
+     /*Mobile Sobre nós*/
+     .sobre-nos{
+        height: auto;
+     }
+     .video-e-localizacao{
+        flex-direction: column;
+        gap: 2rem;
+     }
+     iframe{
+        width: 80vw;
+     }
+     h5{
+        font-size: 3rem;
+     }
+     .sobre-nos p{
+        width: 90%;
+        text-align: center;
+     }
+}
