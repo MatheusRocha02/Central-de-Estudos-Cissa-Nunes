@@ -53,8 +53,19 @@ li {
     right: 15rem;
     animation: slide 1.5s ease-in-out;
 }
+.back-to-top{
+    width: 5rem;
+    position: fixed;
+    transform: translateY(55vh);
+    opacity: 0.7;
+}
 .card img{
     width: 30rem;
+}
+.aprovacoes-container img{
+    width: 25rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
 }
 video{
     width: 30rem;
@@ -71,6 +82,7 @@ video{
     width: 2rem;
     margin-right: 1rem;
 }
+
 
 /*States*/
 nav ul li a:hover {
@@ -114,8 +126,6 @@ nav ul li a:hover {
     }
 }
 
-
-
 /*Header styles*/
 header {
     display: flex;
@@ -146,7 +156,6 @@ header nav ul li a {
     border-bottom-left-radius: 10rem;
     border-bottom-right-radius: 10rem;
 }
-
 .home {
     display: flex;
     justify-content: space-between;
@@ -211,17 +220,18 @@ h3 {
     justify-content: center;
     align-items: center;
 }
-.aulas-oferecidas-text, .aprovacoes-text{
+.aulas-oferecidas-text{
     display: inherit;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    align-items: center;
     border: 1px solid var(--white);
     position: relative;
-    bottom: 10rem;
     padding: 5vh 40vh;
     border-radius: 3rem;
     width: 100%;
+    bottom: 25rem;
 }
 h4{
    width: 200%;
@@ -234,30 +244,32 @@ h4{
     text-align: center;
     font-size: 2rem;
 }
-
-.container-slider{
+.prev, .next{
+    font-size: 4rem;
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.822);
+    font-weight: bold;
+    text-shadow: var(--shadow);
+}
+.prev{
+    position: relative;
+    right: 16rem;
+}
+.next{
+    position: relative;
+    left: 16rem;
+}
+.slider{
     display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row;
 }
 .container-cards{
     display: flex;
+    position: relative;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
-    max-width: 80vw;
-    height: auto;
-    overflow-x: hidden;
 }
-.prev-btn, .next-btn{
-    font-size: 8rem;
-    background: transparent;
-    border: none;
-    color: var(--white);
-}
-
-
 .card{
    display: flex;
    flex-direction: column;
@@ -266,10 +278,10 @@ h4{
    width: 30rem;
    height: 45vh;
    background: var(--white);
-   border-radius: 2rem;
+   border-radius: 1rem;
    box-shadow: var(--shadow);
+   position: absolute;
 }
-
 .card .legend{
     padding: 1rem;
     font-size: 3rem;
@@ -282,13 +294,41 @@ h4{
     text-decoration: underline;
 }
 .ver-todas{
-    font-size: 3rem;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 2rem;
+    height: auto;
     position: relative;
-    top: 5rem;
+    top: -5rem;
+}
+.appear{
+    display: flex;
+}
+.ver-todas-btn{
+    position: relative;
+    top: 20rem;
+}
+.fechar-btn, .ver-todas-btn{
+    font-size: 2.5rem;
     color: var(--white);
+    background: transparent;
+    border: none;
     text-decoration: underline;
 }
-
+.ver-todas-container{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem
+}
+.ver-todas-card img{
+    width: 25rem;
+    border-radius: 0.8rem;
+}
 /*Se increva*/
 .se-inscreva{
     background: url(/assets/imgs/index-bg.png);
@@ -302,6 +342,7 @@ h4{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: auto;
 }
 .se-inscreva fieldset{
     padding: 4rem;
@@ -318,6 +359,11 @@ h4{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+legend{
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--black);
 }
 label{
     font-size: 2rem;
@@ -343,6 +389,9 @@ select{
 option{
     font-size: 2rem;
 }
+.confirmacao-ciente{
+    font-size: 1.3rem;
+}
 .formulario-de-inscricao button{
     height: 3rem;
     border-radius: 5rem;
@@ -364,6 +413,22 @@ option{
 
 
 /*Aprovações*/
+.aprovacoes{
+   height: auto;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 4rem;
+}
+.aprovacoes-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
 
 
 /*Sobre nós*/
@@ -425,16 +490,11 @@ h6{
 .contatos p{
     font-size: 2rem;
     display: flex;
-    
 }
 .contatos-icons{
     display: flex;
     gap: 2.5rem;
 }
-
-
-
-
 /*footer*/
 footer{
    text-align: center;
@@ -464,7 +524,10 @@ footer{
         position: relative;
         right: 2rem;
     }
-
+    .aprovacoes-container img{
+        width: 15rem;
+        border-radius: 0.5rem;
+    }
     /*Mobile header*/
     .desktop-menu {
         display: none;
@@ -566,15 +629,17 @@ footer{
         border-radius: 5rem;
     }
     .bg-div{
-        border-bottom-left-radius: 4rem;
-        border-bottom-right-radius: 4rem;
+        border-bottom-left-radius: 3rem;
+        border-bottom-right-radius: 3rem;
     }
-
+    .back-to-top{
+       display: none;
+    }
     /*Mobile Aulas Oferecidas*/
-    .aulas-oferecidas-text, .aprovacoes-text{
+    .aulas-oferecidas-text{
         padding: 1.5rem 7rem;
-        bottom: 6rem;
-        border-radius: 1.3rem;
+        bottom: 25rem;
+        border-radius: 1rem;
     }
     .aulas-oferecidas-text h4, .aprovacoes-text h4{
         font-size: 3rem;
@@ -582,23 +647,19 @@ footer{
     .aulas-oferecidas-text p, .aprovacoes-text p{
         font-size: 1.5rem;
     }
-    .container-slider button{
-        font-size: 4rem;
-    }
-
     .card{
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         width: 30rem;
-        height: 45vh;
+        height: 55vh;
         background: var(--white);
-        border-radius: 2rem;
+        border-radius: 1rem;
         box-shadow: var(--shadow);
      }
      .card img{
-        width: 25rem;
+        width: 30rem;
      }
      .ver-todas{
         font-size: 2rem;
@@ -606,10 +667,10 @@ footer{
 
      /*Mobile Se Inscreva*/
      .se-inscreva{
-        border-top-left-radius: 4rem;
-        border-top-right-radius: 4rem;
-        border-bottom-left-radius: 4rem;
-        border-bottom-right-radius: 4rem;
+        border-top-left-radius: 3rem;
+        border-top-right-radius: 3rem;
+        border-bottom-left-radius: 3rem;
+        border-bottom-right-radius: 3rem;
      }
 
      /*Mobile Sobre nós*/

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="rgba(236, 93, 177, 0.877)">
+    <link rel="icon" type="img.png" href="./assets/imgs/logo/logo.png">
     <link rel="stylesheet" href="./assets/css/style.css">
     <script src="./assets/main.js" defer></script>
     <title>Central de Estudos Cissa Nunes</title>
@@ -35,8 +36,6 @@
                     <li><a href="#se-inscreva">Se inscreva</a></li>
                     <li><a href="#aprovacoes">Aprovações</a></li>
                     <li><a href="#sobre-nos">Sobre nós</a></li>
-                    
-                    
                 </ul>
             </nav>
         </header>
@@ -50,10 +49,10 @@
                     <a class="subscribe-link" href="#se-inscreva">Se inscreva agora</a>
                     <a class="aulas-link" href="#aulas-oferecidas">Nossas aulas</a>
                 </div>
-
             </div>
             <div>
                 <img class="imagem-cissa-nunes" src="./assets/imgs/imagem-cissa.png" alt="">
+                <a href="#"><img class="back-to-top" src="./assets/imgs/up-arrow.png" alt=""></a>
             </div>
         </section>
     </div>
@@ -62,45 +61,44 @@
             <h4>Aulas Oferecidas</h4>
             <p>Para mais informações <a href="">Fale conosco</a>.</p>
         </div>
-        <div class="container-slider">
-
-            <button class="prev-btn">
-                < </button>
-                    <div class="container-cards">
-                        <article class="card">
-                            <p class="legend">Pré Vestibular</p>
-                            <img src="./assets/imgs/aulas/pre-vest-turma-noite.png" alt="">
-                            <a href="">saiba mais</a>
-                        </article>
-                        <article class="card">
-                            <p class="legend">Pré Vestibular</p>
-                            <img src="./assets/imgs/aulas/pre-vest-turma-noite.png" alt="">
-                            <a href="">saiba mais</a>
-                        </article>
-                        <article class="card">
-                            <p class="legend">Pré Vestibular</p>
-                            <img src="./assets/imgs/aulas/pre-vest-turma-noite.png" alt="">
-                            <a href="">saiba mais</a>
-                        </article>
-                        <article class="card">
-                            <p class="legend">Pré Vestibular</p>
-                            <img src="./assets/imgs/aulas/pre-vest-turma-noite.png" alt="">
-                            <a href="">saiba mais</a>
-                        </article>
-                        <article class="card">
-                            <p class="legend">Pré Vestibular</p>
-                            <img src="./assets/imgs/aulas/pre-vest-turma-noite.png" alt="">
-                            <a href="">saiba mais</a>
-                        </article>
-                    </div>
-                    <button class="next-btn">></button>
+        <div class="slider">
+            <button class="prev" onclick="changeSlide(-1)"><</button>
+            <div class="container-cards">
+                <article class="card">
+                    <p class="legend">Pré Vestibular</p>
+                    <img src="./assets/imgs/aulas/pre-vest-turma-noite.png" alt="">
+                    <a href="">saiba mais</a>
+                </article>
+                <article class="card">
+                    <p class="legend">Sei la</p>
+                    <img src="./assets/imgs/aulas/pre-vest-turma-noite.png" alt="">
+                    <a href="">saiba mais</a>
+                </article>
+            </div>
+            <button class="next" onclick="changeSlide(1)">></button>
         </div>
-        <a class="ver-todas" href="">Ver todas ></a>
+        <button class="ver-todas-btn">Ver todas ></button>
+    </section>
+    <section class="ver-todas">
+        <div class="ver-todas-container">
+            <article class="ver-todas-card">
+             <img src="./assets/imgs/aulas/pre-vest-turma-noite.png" alt="">
+            </article>
+            <article class="ver-todas-card">
+             <img src="./assets/imgs/aulas/pre-vest-turma-noite.png" alt="">
+            </article>
+            <article class="ver-todas-card">
+             <img src="./assets/imgs/aulas/pre-vest-turma-noite.png" alt="">
+            </article>
+            <article class="ver-todas-card">
+             <img src="./assets/imgs/aulas/pre-vest-turma-noite.png" alt="">
+            </article>
+         </div>
     </section>
     <section id="se-inscreva" class="se-inscreva"> <!--Seção de inscrição-->
         <fieldset>
-            <legend>Formulário de inscrição</legend>
-            <form  action="" class="formulario-de-inscricao">
+            <legend>Envie seus dados para a inscrição</legend>
+            <form action="" class="formulario-de-inscricao">
                 <div>
                     <label for="nome">Nome: </label>
                     <input type="text" class="nome" name="nome">
@@ -119,57 +117,35 @@
                 </div>
                 <div>
                     <label for="documento">Documento:</label>
-                    <input type="number" class="documento" >
+                    <input type="number" class="documento">
                 </div>
                 <div class="idade-div">
                     <label for="idade">Idade: </label>
                     <input type="number" class="idade">
                 </div>
+                <div>
+                    <label class="confirmacao-ciente">
+                        <input type="checkbox" required>
+                        Estou ciente de que o envio deste formulário não garante a matrícula, servindo apenas para facilitar a inscrição.
+                    </label>
+                </div>
                 <div class="form-btns">
-                    <button type="submit" class="send-btn">Fazer inscrição</button>
+                    <button type="submit" class="send-btn">Enviar</button>
                     <button type="reset" class="reset-btn">Limpar</button>
                 </div>
             </form>
         </fieldset>
     </section>
     <section id="aprovacoes" class="aprovacoes"> <!--Seção de aprovações-->
-        <div class="aprovacoes-text">
-            <h4>Aprovações</h4>
-            <p>Para mais informações <a href="">Fale conosco</a>.</p>
-        </div>
-        <div class="container-slider">
-            <button class="prev-btn">
-                < </button>
-                    <div class="container-cards">
-                        <article class="card">
-                            <p class="legend">Pré Vestibular</p>
-                            <img src="./assets/imgs/aulas/pre-vest-turma-noite.png" alt="">
-                            <a href="">saiba mais</a>
-                        </article>
-                        <article class="card">
-                            <p class="legend">Pré Vestibular</p>
-                            <img src="./assets/imgs/aulas/pre-vest-turma-noite.png" alt="">
-                            <a href="">saiba mais</a>
-                        </article>
-                        <article class="card">
-                            <p class="legend">Pré Vestibular</p>
-                            <img src="./assets/imgs/aulas/pre-vest-turma-noite.png" alt="">
-                            <a href="">saiba mais</a>
-                        </article>
-                        <article class="card">
-                            <p class="legend">Pré Vestibular</p>
-                            <img src="./assets/imgs/aulas/pre-vest-turma-noite.png" alt="">
-                            <a href="">saiba mais</a>
-                        </article>
-                        <article class="card">
-                            <p class="legend">Pré Vestibular</p>
-                            <img src="./assets/imgs/aulas/pre-vest-turma-noite.png" alt="">
-                            <a href="">saiba mais</a>
-                        </article>
-                    </div>
-                    <button class="next-btn">></button>
-        </div>
-        <a class="ver-todas" href="">Ver todas ></a>
+           <h5>Aprovações</h5>
+           <div class="aprovacoes-container">
+            <img src="./assets/imgs/aprovacoes/ed-fisica.png" alt="">
+            <img src="./assets/imgs/aprovacoes/eletro.png" alt="">
+            <img src="./assets/imgs/aprovacoes/eletromec.png" alt="">
+            <img src="./assets/imgs/aprovacoes/historia.png" alt="">
+            <img src="./assets/imgs/aprovacoes/psi.jpg" alt="">
+            <img src="./assets/imgs/aprovacoes/psi2.png" alt=""><img src="" alt="">
+           </div>
     </section>
     <section id="sobre-nos" class="sobre-nos"> <!--Seção Sobre nós-->
         <div class="sobre-nos-text">
